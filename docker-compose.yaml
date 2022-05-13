@@ -20,6 +20,14 @@ services:
       - database
     depends_on:
       - database
+    environment:
+      DB_USER: ${DB_USER}
+      DB_PASS: ${DB_PASS}
+      DB_HOST: ${DB_HOST}
+      DB_DATABASE: ${DB_DATABASE}
+      DB_PORT: ${DB_PORT}
+      APP_HOST: ${APP_HOST}
+      APP_PORT: ${APP_PORT}
 
   database:
     build:
