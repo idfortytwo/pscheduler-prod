@@ -17,9 +17,9 @@ services:
     expose:
       - 8000
     links:
-      - postgres
+      - database
     depends_on:
-      - postgres
+      - database
 
   database:
     build:
