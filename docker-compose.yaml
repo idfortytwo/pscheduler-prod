@@ -2,6 +2,7 @@ version: '3'
 
 services:
   frontend:
+    image: frontend
     build:
       context: .
       dockerfile: frontend/Dockerfile
@@ -9,6 +10,7 @@ services:
       - "8001:8001"
 
   backend:
+    image: backend
     build:
       context: .
       dockerfile: backend/Dockerfile
@@ -30,6 +32,7 @@ services:
       APP_PORT: ${APP_PORT}
 
   database:
+    image: database
     build:
       context: .
       dockerfile: database/Dockerfile
