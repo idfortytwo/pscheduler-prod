@@ -32,7 +32,7 @@ services:
       APP_PORT: ${APP_PORT}
 
   database:
-    image: database
+    image: postgres:alpine
     build:
       context: .
       dockerfile: database/Dockerfile
