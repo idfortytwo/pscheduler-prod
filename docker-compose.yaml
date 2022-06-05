@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  frontend:
+    image: id42/ps-frontend
+    ports:
+      - "8001:8001"
+    expose:
+      - 8001
+
+  backend:
+    image: id42/ps-backend
+    ports:
+      - "8000:8000"
+    expose:
+      - 8000
+    links:
+      - database
+    depends_on:
+      - database
+
+  database:
+    image: postgres:alpine
+    ports:
+      - "5434:5432"
+    expose:
+      - 5434
+    volumes:
+      - ../ps_db_volume:/var/lib/postgresql/data
